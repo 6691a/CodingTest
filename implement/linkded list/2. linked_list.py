@@ -10,40 +10,70 @@
 
 """
 class Node():
-    def __init__(self, value):
+    def __init__(self, value, next=None):
         self.value = value
-        self.next = None
+        self.next = next
 
 class LinkedList():
     def __init__(self, value):
         self.head = Node(value)
-        self.count = 0
+        self.count = 1
     
-    def append(self, value):
+    def add(self, value):
         node = self.head
-        
+        if not node:
+            self.head = Node(value)
+            self.count += 1
+
+            return 
+
         while node.next:
             node = node.next
-        
         node.next = Node(value)
         self.count += 1
-        
-    def print_all(self):
-        node = self.head
+    
+    def delete(self, value):
+        """
+        1. head 노드를 삭제
+        2. 중간 노드를 삭제
+        3. 마지막 노드 삭제
+        """
+        if self.head.value == value:
+            self.head = self.head.next
+            self.count -= 1
+            return 
 
-        while node:
-            print(node.value)
+        node = self.head
+        while node.next:
+            if node.next.value == value:
+                node.next = node.next.next
+                self.count -= 1
+                return  
             node = node.next
 
+
+    def desc(self):
+        node = self.head
+        while node: 
+            print(node.value)
+            node = node.next
+        
+        if not self.head:
+            print("노드가 존재하지 않습니다.")
+        
+
+
 l = LinkedList(1)
-l.append(2)
-l.append(3)
-l.append(4)
+l.add(2)
+l.add(3)
+l.add(4)
+l.add(5)
+l.delete(2)
+l.delete(1)
+l.delete(3)
+l.delete(4)
+l.delete(5)
 
-l.pop()
-
-l.print_all()
-
-l.append(5)
-
-l.print_all()
+l.desc()
+l.add(6)
+l.desc()
