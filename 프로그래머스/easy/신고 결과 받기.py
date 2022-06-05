@@ -13,7 +13,6 @@ def solution(id_list: list, report: list, k: int):
         if k <= len(cnt[i]):
             for j in v:
                 answer[j] += 1
-    print(list(answer.values()))
     return list(answer.values())
 
 solution(
