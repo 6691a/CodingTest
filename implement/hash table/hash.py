@@ -1,4 +1,3 @@
-
 class HashTable():
     def __init__(self, size: int):
         self.size = size
@@ -19,4 +18,4 @@ h = HashTable(5)
 h.add('Nana', 100)
 h.add('Mong', 500)
 
-h.get("Nana")
+h.print()
