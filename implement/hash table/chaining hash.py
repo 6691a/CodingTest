@@ -1,8 +1,3 @@
-
-from calendar import c
-from curses import has_key
-
-
 class HashTable():
     def __init__(self, size: int):
         self.size = size
