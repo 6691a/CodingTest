@@ -47,8 +47,7 @@ class HashTable():
         print(self.hash_table)
 
 h = HashTable(5)
-# print(hash("dk") % 5)
-# print(hash("de") % 5)
+
 h.add("dk", 100)
 h.add("de", 1000)
 h.add("dk", 200)
