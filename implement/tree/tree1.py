@@ -101,7 +101,7 @@ class Tree():
                 parent.left = target
                 target.left = current.left
                 target.right = current.right
-            # 삭제 할 노드가 부모노드의 왼쪽에 존재
+            # 삭제 할 노드가 부모노드의 오른쪽에 존재
             else:
                 target = current.right
                 target_parent = current.right
@@ -116,26 +116,33 @@ class Tree():
                 target.left = current.left
                 target.right = current.right
 
+from random import randint
 
-        # 4: node가 leaf인 경우
-        # 5: node가 leaf인 경우
-
-
-
-tree = Tree(10)
-
-tree.add(5)
-tree.add(11) 
-tree.add(4)
-
-print(tree.get(4))
-print(tree.get(5))
-print(tree.get(16))
+# 테스트
 
 
-# print(tree.root.__dict__)
-# print(tree.root.left.__dict__)
-# print(tree.root.left.left.__dict__)
+data = [
+    1, 514, 519, 16, 17, 539, 541, 44, 46, 559, 561,
+    567, 68, 83, 596, 87, 600, 603, 95, 108, 621, 620,
+    120, 124, 129, 643, 647, 138, 142, 656, 146, 670,
+    675, 683, 684, 181, 185, 191, 708, 711, 734, 226,
+    230, 745, 747, 237, 753, 248, 250, 764, 774, 272, 
+    278, 792, 281, 283, 796, 289, 298, 314, 318, 832,
+]
 
-# print(tree.root.right.__dict__)
+tree = Tree(500)
+
+for i in data:
+    tree.add(i)
+
+for i in data:
+    assert True == tree.get(i)
+
+
+# [561, 567, 68, 83, 596, 87, 600, 603, 95, 108]
+for i in data[10: 20]:
+    tree.delete(i)
+
+for i in data[10: 20]:
+    assert False == tree.get(i)
 
