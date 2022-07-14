@@ -2,15 +2,15 @@
 # 짝수라면 n / 2
 # n의 값이 1이 될때까지 반복하며 모든 값을 출력한다.
 
-# def func(num: int):
-#     print(num)
-#     if num <= 1:
-#         return num
+def func(num: int):
+    print(num)
+    if num <= 1:
+        return num
     
-#     if num % 2 == 0:
-#         return func(int(num / 2))
-#     else:
-#         return func(3 * num + 1)
+    if num % 2 == 0:
+        return func(int(num / 2))
+    else:
+        return func(3 * num + 1)
 
 # func(3)
 
