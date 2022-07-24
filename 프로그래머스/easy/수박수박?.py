@@ -5,7 +5,7 @@ def solution(n):
             str += "수"
         else:
             str += "박"
-    return 
+    return str
 solution(2)
 
 
